@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0057)file:///C:/Users/benco/Downloads/aict_configurator_3.html -->
+<!-- saved from url=(0057)file:///C:/Users/benco/Downloads/aict_configurator_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -581,7 +581,7 @@ body {
         <div class="persona-btn-name">Regulator is knocking</div>
         <div class="persona-btn-trigger">Compliance, audit exposure, EU AI Act</div>
       </button>
-      <button class="persona-btn active" data-persona="strat" onclick="selectPersona(this)">
+      <button class="persona-btn" data-persona="strat" onclick="selectPersona(this)">
         <div class="persona-btn-name">Top-down AI strategy</div>
         <div class="persona-btn-trigger">CAIO, AI CoE, board mandate, SPM in use</div>
       </button>
@@ -591,7 +591,7 @@ body {
       </button>
     </div>
 
-    <div class="sidebar-section" id="filter-section" style="display: block;">
+    <div class="sidebar-section" id="filter-section" style="display:none">
       <div class="sidebar-label">Component type</div>
       <label class="filter-row">
         <input type="checkbox" id="f-core" checked="" onchange="applyFilters()">
@@ -611,7 +611,7 @@ body {
       </label>
     </div>
 
-    <div class="sidebar-section" id="stage-filter-section" style="display: block;">
+    <div class="sidebar-section" id="stage-filter-section" style="display:none">
       <div class="sidebar-label">Stage focus</div>
       <div class="stage-filters">
         <div class="stage-pill s1" id="sf-1" onclick="toggleStage(1, this)">Stage 1</div>
@@ -627,12 +627,12 @@ body {
   <!-- CONTENT -->
   <main class="content" id="content-area">
 
-    <div id="empty-state" class="empty-state" style="display: none;">
+    <div id="empty-state" class="empty-state" style="display: block;">
       <div class="empty-state-title">Select a customer persona</div>
       <div class="empty-state-sub">Choose a persona from the left to generate a configured pathway</div>
     </div>
 
-    <div id="persona-view" style="display: block;">
+    <div id="persona-view" style="display:none">
 
       <div class="view-toggle">
         <button class="view-btn active" id="vbtn-pathway" onclick="switchView(&#39;pathway&#39;)">Pathway view</button>
@@ -640,61 +640,61 @@ body {
       </div>
 
       <!-- PATHWAY VIEW -->
-      <div id="pathway-view">
+      <div id="pathway-view" style="display: block;">
         <div class="persona-header">
           <div class="persona-eyebrow">Configured pathway</div>
-          <div class="persona-name" id="ph-name">Top-down AI strategy</div>
-          <div class="persona-desc" id="ph-desc">A CAIO or AI CoE exists, or the board has issued a mandate to govern AI investment. The governing question is "are we investing in the right AI and can we prove it?" - the inventory is a downstream output of strategy, not the starting point. SPM integration is a priority.</div>
-          <div class="persona-trigger-badge"><strong>Trigger:</strong> <span id="ph-trigger">CAIO appointment, AI CoE formation, board AI investment mandate, or SPM already live</span></div>
+          <div class="persona-name" id="ph-name"></div>
+          <div class="persona-desc" id="ph-desc"></div>
+          <div class="persona-trigger-badge"><strong>Trigger:</strong> <span id="ph-trigger"></span></div>
         </div>
 
         <div class="stats-row">
           <div class="stat-card">
-            <div class="stat-value" id="stat-core">21</div>
+            <div class="stat-value" id="stat-core">—</div>
             <div class="stat-label">Core components</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value" id="stat-optional">5</div>
+            <div class="stat-value" id="stat-optional">—</div>
             <div class="stat-label">Optional add-ons</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value" id="stat-future">0</div>
+            <div class="stat-value" id="stat-future">—</div>
             <div class="stat-label">Future expansions</div>
           </div>
         </div>
 
         <div class="stages-grid">
           <div class="stage-col" id="col-s1">
-            <div class="stage-head s1">Stage 1: See it <span class="stage-sub" id="sh-s1">First stage, strategy-led</span></div>
-            <div class="stage-body" id="sb-s1"><div class="comp-group-label">Entry point: strategy first</div><div class="comp-item accelerated" data-type="accelerated" data-stage="1"><div class="comp-dot"></div><div>AI Strategy: demand intake &amp; CoE workspace setup</div></div><div class="comp-item accelerated" data-type="accelerated" data-stage="1"><div class="comp-dot"></div><div>SPM integration: AI roadmap tied to business outcomes</div></div><div class="comp-group-label">Platform &amp; inventory</div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AICT platform deployment</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AI asset schema: strategy-aligned metadata</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Inventory populated from approved demand pipeline</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Ownership &amp; CoE governance roles</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AI Cases: intake and approval workflow</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Value templates: from day one, strategy-linked</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="1"><div class="comp-dot"></div><div>Enterprise Architecture integration</div></div></div>
+            <div class="stage-head s1">Stage 1: See it <span class="stage-sub" id="sh-s1"></span></div>
+            <div class="stage-body" id="sb-s1"></div>
           </div>
           <div class="stage-col" id="col-s2">
-            <div class="stage-head s2">Stage 2: Assess it <span class="stage-sub" id="sh-s2">Second stage</span></div>
-            <div class="stage-body" id="sb-s2"><div class="comp-group-label">Risk &amp; value</div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>Risk assessment templates: strategy-weighted</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI impact assessments</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AICT native compliance monitoring</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI Cases: risk findings tracked to resolution</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI Strategy: prioritise remediation by business value</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>Value metrics now inform investment decisions</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="2"><div class="comp-dot"></div><div>IRM integration</div></div><div class="comp-item optional" data-type="optional" data-stage="2"><div class="comp-dot"></div><div>EU AI Act / ISO 42001 mapping</div></div></div>
+            <div class="stage-head s2">Stage 2: Assess it <span class="stage-sub" id="sh-s2"></span></div>
+            <div class="stage-body" id="sb-s2"></div>
           </div>
           <div class="stage-col" id="col-s3">
-            <div class="stage-head s3">Stage 3: Govern &amp; measure it <span class="stage-sub" id="sh-s3">Third stage</span></div>
-            <div class="stage-body" id="sb-s3"><div class="comp-group-label">Value &amp; portfolio</div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Value Dashboard: full portfolio ROI visibility</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Strategy: portfolio performance vs. strategic goals</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Executive AI portfolio reporting cadence</div></div><div class="comp-group-label">Governance</div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Agent Fabric: third-party agent governance</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Privacy &amp; Security: access monitoring</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Policy enforcement across all platforms</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Cases: full operational cadence</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="3"><div class="comp-dot"></div><div>AI Gateway: as agentic workloads scale</div></div><div class="comp-item optional" data-type="optional" data-stage="3"><div class="comp-dot"></div><div>SecOps integration</div></div></div>
+            <div class="stage-head s3">Stage 3: Govern &amp; measure it <span class="stage-sub" id="sh-s3"></span></div>
+            <div class="stage-body" id="sb-s3"></div>
           </div>
         </div>
 
         <div class="thread-bar">
           <div class="thread-head">
             <span class="thread-head-title">Optimize it: always on</span>
-            <span class="thread-head-sub" id="thread-subtitle">strategy-aligned value thread</span>
+            <span class="thread-head-sub" id="thread-subtitle"></span>
           </div>
           <div class="thread-metrics">
             <div class="thread-cell">
               <div class="thread-cell-label">Stage 1</div>
-              <span id="tm-s1">Demand pipeline volume · Approved initiatives · Inventory coverage vs. demand</span>
+              <span id="tm-s1"></span>
             </div>
             <div class="thread-cell">
               <div class="thread-cell-label">Stage 2</div>
-              <span id="tm-s2">Risk distribution · Value metrics on assessed assets · Remediation by business impact</span>
+              <span id="tm-s2"></span>
             </div>
             <div class="thread-cell">
               <div class="thread-cell-label">Stage 3</div>
-              <span id="tm-s3">AI ROI by asset · Strategic alignment score · Portfolio performance · Drifting initiatives flagged</span>
+              <span id="tm-s3"></span>
             </div>
           </div>
         </div>
@@ -711,10 +711,10 @@ body {
       <div id="catalog-view-area" style="display:none">
         <div class="persona-header">
           <div class="persona-eyebrow">Component catalog</div>
-          <div class="persona-name" id="cat-ph-name">Top-down AI strategy</div>
+          <div class="persona-name" id="cat-ph-name"></div>
           <div class="persona-desc">All components relevant to this persona, with stage and persona tags. Use as a checklist for scoping conversations.</div>
         </div>
-        <div class="catalog-grid" id="catalog-grid-content"><div class="cat-card"><div class="cat-head">Platform foundation</div><div class="cat-body"><div class="cat-row"><div class="cat-item">AICT platform deployment &amp; configuration</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI asset schema setup</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Intake process &amp; lifecycle workflow</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Ownership &amp; metadata definition</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">CMDB asset-to-service mapping</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Discovery</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Discovery workshops (Now Assist, agents, third-party)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Inventory from approved demand pipeline</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Risk &amp; compliance</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Risk assessment template configuration</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI impact assessments</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AICT native compliance monitoring</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">IRM integration (if on platform)</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Risk &amp; issue remediation backlog &amp; prioritisation</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">AI Cases</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Configure for intake &amp; ownership gaps</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">SLAs for risk findings &amp; compliance gaps</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Full operational cadence &amp; assignment groups</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">Privacy &amp; Security</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Elevated access alerts &amp; remediation</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Dormant agent detection &amp; clearance</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">AI Gateway</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Gateway (non-agentic-first customers)</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Agent governance</div><div class="cat-body"><div class="cat-row"><div class="cat-item">AI Agent Fabric: cross-platform setup</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Consistent policy enforcement across platforms</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">Value &amp; AI Strategy</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Value templates (adoption &amp; productivity)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Value Dashboard: ROI by asset</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI Strategy: demand intake &amp; CoE workspace</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">SPM integration: AI roadmap</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Enterprise Architecture integration</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Portfolio performance vs. strategic goals</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Executive AI portfolio reporting cadence</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill st">ST</span><span class="pill sh">SH</span></div></div></div></div></div>
+        <div class="catalog-grid" id="catalog-grid-content"></div>
         <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border)">
           <div class="legend">
             <div class="leg-item"><span class="pill p1">S1</span> Stage 1</div>
@@ -1170,6 +1170,8 @@ function switchView(view) {
   document.getElementById('pathway-view').style.display = view === 'pathway' ? 'block' : 'none';
   document.getElementById('catalog-view-area').style.display = view === 'catalog' ? 'block' : 'none';
 }
+
+window.onload = function() { resetAll(); };
 
 function resetAll() {
   currentPersona = null;
