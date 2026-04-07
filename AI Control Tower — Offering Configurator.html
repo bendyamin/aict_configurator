@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0057)file:///C:/Users/benco/Downloads/aict_configurator_2.html -->
+<!-- saved from url=(0057)file:///C:/Users/benco/Downloads/aict_configurator_3.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Control Tower — Offering Configurator</title>
+<title>AI Control Tower: Offering Configurator</title>
 <link href="./AI Control Tower — Offering Configurator_files/css2" rel="stylesheet">
 <style>
 :root {
@@ -581,7 +581,7 @@ body {
         <div class="persona-btn-name">Regulator is knocking</div>
         <div class="persona-btn-trigger">Compliance, audit exposure, EU AI Act</div>
       </button>
-      <button class="persona-btn" data-persona="strat" onclick="selectPersona(this)">
+      <button class="persona-btn active" data-persona="strat" onclick="selectPersona(this)">
         <div class="persona-btn-name">Top-down AI strategy</div>
         <div class="persona-btn-trigger">CAIO, AI CoE, board mandate, SPM in use</div>
       </button>
@@ -591,11 +591,11 @@ body {
       </button>
     </div>
 
-    <div class="sidebar-section" id="filter-section" style="display:none">
+    <div class="sidebar-section" id="filter-section" style="display: block;">
       <div class="sidebar-label">Component type</div>
       <label class="filter-row">
         <input type="checkbox" id="f-core" checked="" onchange="applyFilters()">
-        <span class="filter-label"><span class="filter-dot" style="background:#1D9E75"></span>Core — always included</span>
+        <span class="filter-label"><span class="filter-dot" style="background:#1D9E75"></span>Core: always included</span>
       </label>
       <label class="filter-row">
         <input type="checkbox" id="f-optional" checked="" onchange="applyFilters()">
@@ -607,11 +607,11 @@ body {
       </label>
       <label class="filter-row">
         <input type="checkbox" id="f-future" checked="" onchange="applyFilters()">
-        <span class="filter-label"><span class="filter-dot" style="background:#BA7517"></span>Future — flag for later</span>
+        <span class="filter-label"><span class="filter-dot" style="background:#BA7517"></span>Future: flag for later</span>
       </label>
     </div>
 
-    <div class="sidebar-section" id="stage-filter-section" style="display:none">
+    <div class="sidebar-section" id="stage-filter-section" style="display: block;">
       <div class="sidebar-label">Stage focus</div>
       <div class="stage-filters">
         <div class="stage-pill s1" id="sf-1" onclick="toggleStage(1, this)">Stage 1</div>
@@ -627,12 +627,12 @@ body {
   <!-- CONTENT -->
   <main class="content" id="content-area">
 
-    <div id="empty-state" class="empty-state">
+    <div id="empty-state" class="empty-state" style="display: none;">
       <div class="empty-state-title">Select a customer persona</div>
       <div class="empty-state-sub">Choose a persona from the left to generate a configured pathway</div>
     </div>
 
-    <div id="persona-view" style="display:none">
+    <div id="persona-view" style="display: block;">
 
       <div class="view-toggle">
         <button class="view-btn active" id="vbtn-pathway" onclick="switchView(&#39;pathway&#39;)">Pathway view</button>
@@ -643,67 +643,67 @@ body {
       <div id="pathway-view">
         <div class="persona-header">
           <div class="persona-eyebrow">Configured pathway</div>
-          <div class="persona-name" id="ph-name"></div>
-          <div class="persona-desc" id="ph-desc"></div>
-          <div class="persona-trigger-badge"><strong>Trigger:</strong> <span id="ph-trigger"></span></div>
+          <div class="persona-name" id="ph-name">Top-down AI strategy</div>
+          <div class="persona-desc" id="ph-desc">A CAIO or AI CoE exists, or the board has issued a mandate to govern AI investment. The governing question is "are we investing in the right AI and can we prove it?" - the inventory is a downstream output of strategy, not the starting point. SPM integration is a priority.</div>
+          <div class="persona-trigger-badge"><strong>Trigger:</strong> <span id="ph-trigger">CAIO appointment, AI CoE formation, board AI investment mandate, or SPM already live</span></div>
         </div>
 
         <div class="stats-row">
           <div class="stat-card">
-            <div class="stat-value" id="stat-core">—</div>
+            <div class="stat-value" id="stat-core">21</div>
             <div class="stat-label">Core components</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value" id="stat-optional">—</div>
+            <div class="stat-value" id="stat-optional">5</div>
             <div class="stat-label">Optional add-ons</div>
           </div>
           <div class="stat-card">
-            <div class="stat-value" id="stat-future">—</div>
+            <div class="stat-value" id="stat-future">0</div>
             <div class="stat-label">Future expansions</div>
           </div>
         </div>
 
         <div class="stages-grid">
           <div class="stage-col" id="col-s1">
-            <div class="stage-head s1">Stage 1 — See it <span class="stage-sub" id="sh-s1"></span></div>
-            <div class="stage-body" id="sb-s1"></div>
+            <div class="stage-head s1">Stage 1: See it <span class="stage-sub" id="sh-s1">First stage, strategy-led</span></div>
+            <div class="stage-body" id="sb-s1"><div class="comp-group-label">Entry point: strategy first</div><div class="comp-item accelerated" data-type="accelerated" data-stage="1"><div class="comp-dot"></div><div>AI Strategy: demand intake &amp; CoE workspace setup</div></div><div class="comp-item accelerated" data-type="accelerated" data-stage="1"><div class="comp-dot"></div><div>SPM integration: AI roadmap tied to business outcomes</div></div><div class="comp-group-label">Platform &amp; inventory</div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AICT platform deployment</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AI asset schema: strategy-aligned metadata</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Inventory populated from approved demand pipeline</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Ownership &amp; CoE governance roles</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AI Cases: intake and approval workflow</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Value templates: from day one, strategy-linked</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="1"><div class="comp-dot"></div><div>Enterprise Architecture integration</div></div></div>
           </div>
           <div class="stage-col" id="col-s2">
-            <div class="stage-head s2">Stage 2 — Assess it <span class="stage-sub" id="sh-s2"></span></div>
-            <div class="stage-body" id="sb-s2"></div>
+            <div class="stage-head s2">Stage 2: Assess it <span class="stage-sub" id="sh-s2">Second stage</span></div>
+            <div class="stage-body" id="sb-s2"><div class="comp-group-label">Risk &amp; value</div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>Risk assessment templates: strategy-weighted</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI impact assessments</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AICT native compliance monitoring</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI Cases: risk findings tracked to resolution</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI Strategy: prioritise remediation by business value</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>Value metrics now inform investment decisions</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="2"><div class="comp-dot"></div><div>IRM integration</div></div><div class="comp-item optional" data-type="optional" data-stage="2"><div class="comp-dot"></div><div>EU AI Act / ISO 42001 mapping</div></div></div>
           </div>
           <div class="stage-col" id="col-s3">
-            <div class="stage-head s3">Stage 3 — Govern &amp; measure it <span class="stage-sub" id="sh-s3"></span></div>
-            <div class="stage-body" id="sb-s3"></div>
+            <div class="stage-head s3">Stage 3: Govern &amp; measure it <span class="stage-sub" id="sh-s3">Third stage</span></div>
+            <div class="stage-body" id="sb-s3"><div class="comp-group-label">Value &amp; portfolio</div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Value Dashboard: full portfolio ROI visibility</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Strategy: portfolio performance vs. strategic goals</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Executive AI portfolio reporting cadence</div></div><div class="comp-group-label">Governance</div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Agent Fabric: third-party agent governance</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Privacy &amp; Security: access monitoring</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Policy enforcement across all platforms</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Cases: full operational cadence</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="3"><div class="comp-dot"></div><div>AI Gateway: as agentic workloads scale</div></div><div class="comp-item optional" data-type="optional" data-stage="3"><div class="comp-dot"></div><div>SecOps integration</div></div></div>
           </div>
         </div>
 
         <div class="thread-bar">
           <div class="thread-head">
-            <span class="thread-head-title">Optimize it — always on</span>
-            <span class="thread-head-sub" id="thread-subtitle"></span>
+            <span class="thread-head-title">Optimize it: always on</span>
+            <span class="thread-head-sub" id="thread-subtitle">strategy-aligned value thread</span>
           </div>
           <div class="thread-metrics">
             <div class="thread-cell">
               <div class="thread-cell-label">Stage 1</div>
-              <span id="tm-s1"></span>
+              <span id="tm-s1">Demand pipeline volume · Approved initiatives · Inventory coverage vs. demand</span>
             </div>
             <div class="thread-cell">
               <div class="thread-cell-label">Stage 2</div>
-              <span id="tm-s2"></span>
+              <span id="tm-s2">Risk distribution · Value metrics on assessed assets · Remediation by business impact</span>
             </div>
             <div class="thread-cell">
               <div class="thread-cell-label">Stage 3</div>
-              <span id="tm-s3"></span>
+              <span id="tm-s3">AI ROI by asset · Strategic alignment score · Portfolio performance · Drifting initiatives flagged</span>
             </div>
           </div>
         </div>
 
         <div class="legend">
-          <div class="leg-item"><div class="leg-swatch" style="background:#1D9E75"></div>Core — included</div>
+          <div class="leg-item"><div class="leg-swatch" style="background:#1D9E75"></div>Core: included</div>
           <div class="leg-item"><div class="leg-swatch" style="background:#888780"></div>Optional</div>
           <div class="leg-item"><div class="leg-swatch" style="background:#534AB7"></div>Entry-point / accelerated</div>
-          <div class="leg-item"><div class="leg-swatch" style="background:#BA7517"></div>Future — flag for later</div>
+          <div class="leg-item"><div class="leg-swatch" style="background:#BA7517"></div>Future: flag for later</div>
         </div>
       </div>
 
@@ -711,10 +711,10 @@ body {
       <div id="catalog-view-area" style="display:none">
         <div class="persona-header">
           <div class="persona-eyebrow">Component catalog</div>
-          <div class="persona-name" id="cat-ph-name"></div>
+          <div class="persona-name" id="cat-ph-name">Top-down AI strategy</div>
           <div class="persona-desc">All components relevant to this persona, with stage and persona tags. Use as a checklist for scoping conversations.</div>
         </div>
-        <div class="catalog-grid" id="catalog-grid-content"></div>
+        <div class="catalog-grid" id="catalog-grid-content"><div class="cat-card"><div class="cat-head">Platform foundation</div><div class="cat-body"><div class="cat-row"><div class="cat-item">AICT platform deployment &amp; configuration</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI asset schema setup</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Intake process &amp; lifecycle workflow</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Ownership &amp; metadata definition</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">CMDB asset-to-service mapping</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Discovery</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Discovery workshops (Now Assist, agents, third-party)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Inventory from approved demand pipeline</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Risk &amp; compliance</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Risk assessment template configuration</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI impact assessments</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AICT native compliance monitoring</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">IRM integration (if on platform)</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Risk &amp; issue remediation backlog &amp; prioritisation</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">AI Cases</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Configure for intake &amp; ownership gaps</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">SLAs for risk findings &amp; compliance gaps</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Full operational cadence &amp; assignment groups</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">Privacy &amp; Security</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Elevated access alerts &amp; remediation</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Dormant agent detection &amp; clearance</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">AI Gateway</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Gateway (non-agentic-first customers)</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Agent governance</div><div class="cat-body"><div class="cat-row"><div class="cat-item">AI Agent Fabric: cross-platform setup</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Consistent policy enforcement across platforms</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">Value &amp; AI Strategy</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Value templates (adoption &amp; productivity)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Value Dashboard: ROI by asset</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI Strategy: demand intake &amp; CoE workspace</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">SPM integration: AI roadmap</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Enterprise Architecture integration</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Portfolio performance vs. strategic goals</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Executive AI portfolio reporting cadence</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill st">ST</span><span class="pill sh">SH</span></div></div></div></div></div>
         <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border)">
           <div class="legend">
             <div class="leg-item"><span class="pill p1">S1</span> Stage 1</div>
@@ -737,21 +737,21 @@ body {
 const PERSONAS = {
   shadow: {
     name: 'Shadow AI customer',
-    desc: 'The organisation has discovered more AI in use than it knew about and needs to get control fast. The governing question is "what do we have and who owns it?" — compliance and strategy are secondary drivers that emerge as the inventory matures.',
+    desc: 'The organisation has discovered more AI in use than it knew about and needs to get control fast. The governing question is "what do we have and who owns it?" - compliance and strategy are secondary drivers that emerge as the inventory matures.',
     trigger: 'IT-led discovery, CISO escalation, or audit finding revealing ungoverned AI',
     stages: {
       s1: { sub: 'First stage', groups: [
         { label: 'Platform & inventory', items: [
           { type: 'core', text: 'AICT platform deployment & configuration' },
           { type: 'core', text: 'AI asset schema setup' },
-          { type: 'core', text: 'Discovery workshops — Now Assist, agents, third-party tools' },
+          { type: 'core', text: 'Discovery workshops: Now Assist, agents, third-party tools' },
           { type: 'core', text: 'Ownership & metadata definition' },
           { type: 'core', text: 'CMDB asset-to-service mapping' },
           { type: 'core', text: 'Intake process & lifecycle setup' },
         ]},
         { label: 'Operations', items: [
-          { type: 'core', text: 'AI Cases — intake & ownership gaps' },
-          { type: 'core', text: 'Value templates — adoption & productivity tracking' },
+          { type: 'core', text: 'AI Cases: intake & ownership gaps' },
+          { type: 'core', text: 'Value templates: adoption & productivity tracking' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'Hyperscaler discovery (AWS, Azure, GCP)' },
@@ -763,33 +763,33 @@ const PERSONAS = {
           { type: 'core', text: 'Risk assessment template configuration' },
           { type: 'core', text: 'AI impact assessments across inventory' },
           { type: 'core', text: 'AICT native compliance monitoring' },
-          { type: 'core', text: 'AI Cases — SLAs for risk findings' },
+          { type: 'core', text: 'AI Cases: SLAs for risk findings' },
           { type: 'core', text: 'Risk & issue remediation backlog & prioritisation' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'IRM integration (if on platform)' },
           { type: 'optional', text: 'EU AI Act / ISO 42001 mapping' },
         ]},
-        { label: 'Future — activate in stage 3', items: [
-          { type: 'future', text: 'Privacy & Security — access map baseline' },
+        { label: 'Future: activate in stage 3', items: [
+          { type: 'future', text: 'Privacy & Security: access map baseline' },
         ]},
       ]},
       s3: { sub: 'Third stage', groups: [
         { label: 'Security & governance', items: [
-          { type: 'core', text: 'Privacy & Security — access monitoring, dormant agents' },
-          { type: 'core', text: 'AI Agent Fabric — cross-platform governance' },
+          { type: 'core', text: 'Privacy & Security: access monitoring, dormant agents' },
+          { type: 'core', text: 'AI Agent Fabric: cross-platform governance' },
           { type: 'core', text: 'Consistent policy enforcement' },
         ]},
         { label: 'Value & operations', items: [
-          { type: 'core', text: 'Value Dashboard — ROI by asset' },
-          { type: 'core', text: 'AI Cases — full operational cadence' },
+          { type: 'core', text: 'Value Dashboard: ROI by asset' },
+          { type: 'core', text: 'AI Cases: full operational cadence' },
         ]},
         { label: 'Optional', items: [
-          { type: 'optional', text: 'AI Gateway — if MCP agents present' },
+          { type: 'optional', text: 'AI Gateway: if MCP agents present' },
           { type: 'optional', text: 'SecOps integration' },
         ]},
         { label: 'Future expansion', items: [
-          { type: 'future', text: 'AI Strategy — prevent future sprawl' },
+          { type: 'future', text: 'AI Strategy: prevent future sprawl' },
         ]},
       ]},
     },
@@ -802,34 +802,34 @@ const PERSONAS = {
   },
   reg: {
     name: 'Regulator is knocking',
-    desc: 'The governing question is "can we prove our AI is compliant and low-risk?" — visibility and inventory are a means to that end. Stages 1 and 2 run concurrently. Privacy & Security and compliance artifacts are priority-one deliverables from the outset.',
+    desc: 'The governing question is "can we prove our AI is compliant and low-risk?" - visibility and inventory are a means to that end. Stages 1 and 2 run concurrently. Privacy & Security and compliance artifacts are priority-one deliverables from the outset.',
     trigger: 'Audit finding, board-level AI risk demand, EU AI Act exposure, or sector regulator inquiry',
     stages: {
-      s1: { sub: 'First stage — concurrent with Stage 2', groups: [
+      s1: { sub: 'First stage, concurrent with Stage 2', groups: [
         { label: 'Platform & inventory', items: [
           { type: 'core', text: 'AICT platform deployment & configuration' },
-          { type: 'core', text: 'AI asset schema — with compliance metadata fields' },
-          { type: 'core', text: 'Discovery workshops — risk-prioritised, high-sensitivity assets first' },
+          { type: 'core', text: 'AI asset schema: with compliance metadata fields' },
+          { type: 'core', text: 'Discovery workshops: risk-prioritised, high-sensitivity assets first' },
           { type: 'core', text: 'Ownership & accountability framework' },
           { type: 'core', text: 'CMDB asset-to-service mapping' },
-          { type: 'core', text: 'AI Cases — configured immediately for compliance findings' },
+          { type: 'core', text: 'AI Cases: configured immediately for compliance findings' },
         ]},
-        { label: 'Accelerated — activated earlier', items: [
-          { type: 'accelerated', text: 'Privacy & Security — access maps baseline from day one' },
+        { label: 'Accelerated: activated earlier', items: [
+          { type: 'accelerated', text: 'Privacy & Security: access maps baseline from day one' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'CMDB health assessment' },
         ]},
       ]},
-      s2: { sub: 'Second stage — concurrent with Stage 1', groups: [
+      s2: { sub: 'Second stage, concurrent with Stage 1', groups: [
         { label: 'Compliance', items: [
           { type: 'core', text: 'EU AI Act risk classification across inventory' },
           { type: 'core', text: 'ISO 42001 compliance mapping' },
-          { type: 'core', text: 'AI impact assessments — bias, transparency, human-in-loop' },
+          { type: 'core', text: 'AI impact assessments: bias, transparency, human-in-loop' },
           { type: 'core', text: 'AICT native compliance monitoring' },
           { type: 'core', text: 'Audit-ready compliance artifact generation' },
-          { type: 'core', text: 'AI Cases — SLAs tied to regulatory deadlines' },
-          { type: 'core', text: 'Risk & issue remediation backlog — risk-ranked' },
+          { type: 'core', text: 'AI Cases: SLAs tied to regulatory deadlines' },
+          { type: 'core', text: 'Risk & issue remediation backlog, risk-ranked' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'IRM integration (if on platform)' },
@@ -838,16 +838,16 @@ const PERSONAS = {
       ]},
       s3: { sub: 'Third stage', groups: [
         { label: 'Security & enforcement', items: [
-          { type: 'core', text: 'Privacy & Security — full access monitoring, elevated access alerts' },
+          { type: 'core', text: 'Privacy & Security: full access monitoring, elevated access alerts' },
           { type: 'core', text: 'Dormant agent detection & remediation' },
           { type: 'core', text: 'Policy enforcement across all platforms' },
-          { type: 'core', text: 'AI Agent Fabric — third-party agent governance' },
+          { type: 'core', text: 'AI Agent Fabric: third-party agent governance' },
           { type: 'core', text: 'Ongoing compliance posture dashboard' },
-          { type: 'core', text: 'AI Cases — full operational cadence' },
+          { type: 'core', text: 'AI Cases: full operational cadence' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'SecOps integration' },
-          { type: 'optional', text: 'AI Gateway — if MCP agents present' },
+          { type: 'optional', text: 'AI Gateway: if MCP agents present' },
         ]},
         { label: 'Future expansion', items: [
           { type: 'future', text: 'Value Dashboard & AI Strategy' },
@@ -863,21 +863,21 @@ const PERSONAS = {
   },
   strat: {
     name: 'Top-down AI strategy',
-    desc: 'A CAIO or AI CoE exists, or the board has issued a mandate to govern AI investment. The governing question is "are we investing in the right AI and can we prove it?" — the inventory is a downstream output of strategy, not the starting point. SPM integration is a priority.',
+    desc: 'A CAIO or AI CoE exists, or the board has issued a mandate to govern AI investment. The governing question is "are we investing in the right AI and can we prove it?" - the inventory is a downstream output of strategy, not the starting point. SPM integration is a priority.',
     trigger: 'CAIO appointment, AI CoE formation, board AI investment mandate, or SPM already live',
     stages: {
-      s1: { sub: 'First stage — strategy-led', groups: [
-        { label: 'Entry point — strategy first', items: [
-          { type: 'accelerated', text: 'AI Strategy — demand intake & CoE workspace setup' },
-          { type: 'accelerated', text: 'SPM integration — AI roadmap tied to business outcomes' },
+      s1: { sub: 'First stage, strategy-led', groups: [
+        { label: 'Entry point: strategy first', items: [
+          { type: 'accelerated', text: 'AI Strategy: demand intake & CoE workspace setup' },
+          { type: 'accelerated', text: 'SPM integration: AI roadmap tied to business outcomes' },
         ]},
         { label: 'Platform & inventory', items: [
           { type: 'core', text: 'AICT platform deployment' },
-          { type: 'core', text: 'AI asset schema — strategy-aligned metadata' },
+          { type: 'core', text: 'AI asset schema: strategy-aligned metadata' },
           { type: 'core', text: 'Inventory populated from approved demand pipeline' },
           { type: 'core', text: 'Ownership & CoE governance roles' },
-          { type: 'core', text: 'AI Cases — intake and approval workflow' },
-          { type: 'core', text: 'Value templates — from day one, strategy-linked' },
+          { type: 'core', text: 'AI Cases: intake and approval workflow' },
+          { type: 'core', text: 'Value templates: from day one, strategy-linked' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'Enterprise Architecture integration' },
@@ -885,11 +885,11 @@ const PERSONAS = {
       ]},
       s2: { sub: 'Second stage', groups: [
         { label: 'Risk & value', items: [
-          { type: 'core', text: 'Risk assessment templates — strategy-weighted' },
+          { type: 'core', text: 'Risk assessment templates: strategy-weighted' },
           { type: 'core', text: 'AI impact assessments' },
           { type: 'core', text: 'AICT native compliance monitoring' },
-          { type: 'core', text: 'AI Cases — risk findings tracked to resolution' },
-          { type: 'core', text: 'AI Strategy — prioritise remediation by business value' },
+          { type: 'core', text: 'AI Cases: risk findings tracked to resolution' },
+          { type: 'core', text: 'AI Strategy: prioritise remediation by business value' },
           { type: 'core', text: 'Value metrics now inform investment decisions' },
         ]},
         { label: 'Optional', items: [
@@ -899,18 +899,18 @@ const PERSONAS = {
       ]},
       s3: { sub: 'Third stage', groups: [
         { label: 'Value & portfolio', items: [
-          { type: 'core', text: 'Value Dashboard — full portfolio ROI visibility' },
-          { type: 'core', text: 'AI Strategy — portfolio performance vs. strategic goals' },
+          { type: 'core', text: 'Value Dashboard: full portfolio ROI visibility' },
+          { type: 'core', text: 'AI Strategy: portfolio performance vs. strategic goals' },
           { type: 'core', text: 'Executive AI portfolio reporting cadence' },
         ]},
         { label: 'Governance', items: [
-          { type: 'core', text: 'AI Agent Fabric — third-party agent governance' },
-          { type: 'core', text: 'Privacy & Security — access monitoring' },
+          { type: 'core', text: 'AI Agent Fabric: third-party agent governance' },
+          { type: 'core', text: 'Privacy & Security: access monitoring' },
           { type: 'core', text: 'Policy enforcement across all platforms' },
-          { type: 'core', text: 'AI Cases — full operational cadence' },
+          { type: 'core', text: 'AI Cases: full operational cadence' },
         ]},
         { label: 'Optional', items: [
-          { type: 'optional', text: 'AI Gateway — as agentic workloads scale' },
+          { type: 'optional', text: 'AI Gateway: as agentic workloads scale' },
           { type: 'optional', text: 'SecOps integration' },
         ]},
       ]},
@@ -924,32 +924,32 @@ const PERSONAS = {
   },
   agent: {
     name: 'Agentic-first customer',
-    desc: 'Actively building AI agents in AI Agent Studio, Copilot Studio, AWS Bedrock, or similar — and has discovered they need MCP connection governance before broader AICT governance. The governing question is "how do we safely scale the agents we\'re already building?"',
+    desc: 'Actively building AI agents in AI Agent Studio, Copilot Studio, AWS Bedrock, or similar, and has discovered they need MCP connection governance before broader AICT governance. The governing question is "how do we safely scale the agents we\'re already building?"',
     trigger: 'Active agent development programme with MCP connections scaling beyond manual oversight',
     stages: {
-      s1: { sub: 'First stage — gateway-led', groups: [
-        { label: 'Entry point — gateway first', items: [
-          { type: 'accelerated', text: 'AI Gateway — MCP server registry & approval workflow' },
-          { type: 'accelerated', text: 'AI Gateway — OAuth 2.1, pause controls, observability' },
-          { type: 'accelerated', text: 'Privacy & Security — PII detection on MCP traffic' },
+      s1: { sub: 'First stage, gateway-led', groups: [
+        { label: 'Entry point: gateway first', items: [
+          { type: 'accelerated', text: 'AI Gateway: MCP server registry & approval workflow' },
+          { type: 'accelerated', text: 'AI Gateway: OAuth 2.1, pause controls, observability' },
+          { type: 'accelerated', text: 'Privacy & Security: PII detection on MCP traffic' },
         ]},
         { label: 'Platform & inventory', items: [
           { type: 'core', text: 'AICT platform deployment' },
-          { type: 'core', text: 'AI asset schema — agent-focused' },
+          { type: 'core', text: 'AI asset schema: agent-focused' },
           { type: 'core', text: 'Auto-discovery of Now Assist & AI Agent Studio assets' },
-          { type: 'core', text: 'Intake process — agent approval workflow' },
+          { type: 'core', text: 'Intake process: agent approval workflow' },
           { type: 'core', text: 'Ownership & AI Steward role setup' },
-          { type: 'core', text: 'AI Cases — agent incidents & approval tracking' },
+          { type: 'core', text: 'AI Cases: agent incidents & approval tracking' },
         ]},
       ]},
       s2: { sub: 'Second stage', groups: [
         { label: 'Agent governance', items: [
-          { type: 'core', text: 'AI Agent Fabric — multi-platform orchestration governance' },
-          { type: 'core', text: 'Risk assessments — agent-specific (hallucination, access, data)' },
-          { type: 'core', text: 'AI Gateway — CIMD auto-registration for additional platforms' },
-          { type: 'core', text: 'Broader AI inventory — models, datasets, prompts' },
+          { type: 'core', text: 'AI Agent Fabric: multi-platform orchestration governance' },
+          { type: 'core', text: 'Risk assessments: agent-specific (hallucination, access, data)' },
+          { type: 'core', text: 'AI Gateway: CIMD auto-registration for additional platforms' },
+          { type: 'core', text: 'Broader AI inventory: models, datasets, prompts' },
           { type: 'core', text: 'AICT native compliance monitoring' },
-          { type: 'core', text: 'AI Cases — risk findings, gateway alerts' },
+          { type: 'core', text: 'AI Cases: risk findings, gateway alerts' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'IRM integration' },
@@ -958,17 +958,17 @@ const PERSONAS = {
       ]},
       s3: { sub: 'Third stage', groups: [
         { label: 'Full governance', items: [
-          { type: 'core', text: 'Privacy & Security — full access maps, dormant agent detection' },
-          { type: 'core', text: 'Policy enforcement — all platforms, all agents' },
-          { type: 'core', text: 'Value Dashboard — agent productivity & ROI' },
-          { type: 'core', text: 'AI Cases — full operational cadence' },
+          { type: 'core', text: 'Privacy & Security: full access maps, dormant agent detection' },
+          { type: 'core', text: 'Policy enforcement: all platforms, all agents' },
+          { type: 'core', text: 'Value Dashboard: agent productivity & ROI' },
+          { type: 'core', text: 'AI Cases: full operational cadence' },
           { type: 'core', text: 'Compliance posture across full agent estate' },
         ]},
         { label: 'Optional', items: [
           { type: 'optional', text: 'EU AI Act / ISO 42001 mapping' },
         ]},
         { label: 'Future expansion', items: [
-          { type: 'future', text: 'AI Strategy — formalise demand pipeline' },
+          { type: 'future', text: 'AI Strategy: formalise demand pipeline' },
         ]},
       ]},
     },
@@ -1015,7 +1015,7 @@ const CATALOG = [
     { text: 'Agent incidents & gateway alert tracking', stages: ['p1','p2'], personas: ['ag'] },
   ]},
   { group: 'Privacy & Security', items: [
-    { text: 'Access map baseline — what agents can reach', stages: ['p1'], personas: ['re','ag'] },
+    { text: 'Access map baseline: what agents can reach', stages: ['p1'], personas: ['re','ag'] },
     { text: 'Elevated access alerts & remediation', stages: ['p3'], personas: ['sh','re','st','ag'] },
     { text: 'Dormant agent detection & clearance', stages: ['p3'], personas: ['sh','re','st','ag'] },
     { text: 'PII detection on MCP traffic (via AI Gateway)', stages: ['p1','p3'], personas: ['ag','re'] },
@@ -1031,20 +1031,20 @@ const CATALOG = [
     { text: 'Gateway (non-agentic-first customers)', stages: ['p3'], personas: ['sh','re','st'] },
   ]},
   { group: 'Agent governance', items: [
-    { text: 'AI Agent Fabric — cross-platform setup', stages: ['p3'], personas: ['sh','re','st'] },
-    { text: 'AI Agent Fabric — multi-platform orchestration', stages: ['p2'], personas: ['ag'] },
+    { text: 'AI Agent Fabric: cross-platform setup', stages: ['p3'], personas: ['sh','re','st'] },
+    { text: 'AI Agent Fabric: multi-platform orchestration', stages: ['p2'], personas: ['ag'] },
     { text: 'Consistent policy enforcement across platforms', stages: ['p3'], personas: ['sh','re','st','ag'] },
     { text: 'AI Steward role configuration', stages: ['p1'], personas: ['ag'] },
   ]},
   { group: 'Value & AI Strategy', items: [
     { text: 'Value templates (adoption & productivity)', stages: ['p1'], personas: ['sh','st'] },
-    { text: 'Value Dashboard — ROI by asset', stages: ['p3'], personas: ['sh','st','ag'] },
-    { text: 'AI Strategy — demand intake & CoE workspace', stages: ['p1'], personas: ['st'] },
-    { text: 'SPM integration — AI roadmap', stages: ['p1'], personas: ['st'] },
+    { text: 'Value Dashboard: ROI by asset', stages: ['p3'], personas: ['sh','st','ag'] },
+    { text: 'AI Strategy: demand intake & CoE workspace', stages: ['p1'], personas: ['st'] },
+    { text: 'SPM integration: AI roadmap', stages: ['p1'], personas: ['st'] },
     { text: 'Enterprise Architecture integration', stages: ['p1'], personas: ['st'] },
     { text: 'Portfolio performance vs. strategic goals', stages: ['p3'], personas: ['st'] },
     { text: 'Executive AI portfolio reporting cadence', stages: ['p3'], personas: ['st','sh'] },
-    { text: 'AI Strategy — prevent future sprawl', stages: ['p3'], personas: ['sh'] },
+    { text: 'AI Strategy: prevent future sprawl', stages: ['p3'], personas: ['sh'] },
   ]},
 ];
 
