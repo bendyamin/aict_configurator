@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/benco/Downloads/aict_configurator_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Control Tower — Offering Configurator</title>
+<link href="./AI Control Tower — Offering Configurator_files/css2" rel="stylesheet">
+<style>
+:root {
+  --teal-50: #E1F5EE;
+  --teal-100: #9FE1CB;
+  --teal-400: #1D9E75;
+  --teal-600: #0F6E56;
+  --teal-800: #085041;
+  --blue-50: #E6F1FB;
+  --blue-400: #378ADD;
+  --blue-600: #185FA5;
+  --blue-800: #0C447C;
+  --purple-50: #EEEDFE;
+  --purple-400: #7F77DD;
+  --purple-600: #534AB7;
+  --purple-800: #3C3489;
+  --amber-50: #FAEEDA;
+  --amber-400: #BA7517;
+  --amber-600: #854F0B;
+  --amber-800: #633806;
+  --coral-50: #FAECE7;
+  --coral-400: #D85A30;
+  --coral-600: #993C1D;
+  --coral-800: #712B13;
+  --gray-50: #F8F7F4;
+  --gray-100: #F1EFE8;
+  --gray-200: #D3D1C7;
+  --gray-400: #888780;
+  --gray-600: #5F5E5A;
+  --gray-800: #2C2C2A;
+  --ink: #1A1A18;
+  --paper: #FAFAF8;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.14);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Figtree', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── HEADER ── */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.header-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--teal-600);
+  letter-spacing: -0.02em;
+}
+.header-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--gray-200);
+}
+.header-title {
+  font-size: 13px;
+  color: var(--gray-600);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.header-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  background: var(--teal-50);
+  color: var(--teal-600);
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* ── LAYOUT ── */
+.main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: calc(100vh - 61px);
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  border-right: 1px solid var(--border);
+  background: #fff;
+  padding: 28px 24px;
+  position: sticky;
+  top: 61px;
+  height: calc(100vh - 61px);
+  overflow-y: auto;
+}
+.sidebar-section {
+  margin-bottom: 28px;
+}
+.sidebar-section:last-child { margin-bottom: 0; }
+.sidebar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Persona selector */
+.persona-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 6px;
+  transition: all .15s;
+  font-family: 'Figtree', sans-serif;
+}
+.persona-btn:hover { background: var(--gray-50); border-color: var(--border-strong); }
+.persona-btn.active {
+  background: var(--teal-50);
+  border-color: var(--teal-100);
+}
+.persona-btn-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.persona-btn.active .persona-btn-name { color: var(--teal-800); }
+.persona-btn-trigger {
+  font-size: 11px;
+  color: var(--gray-400);
+  line-height: 1.4;
+}
+.persona-btn.active .persona-btn-trigger { color: var(--teal-600); }
+
+/* Filter checkboxes */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+.filter-row input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--teal-400);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.filter-label {
+  font-size: 12px;
+  color: var(--gray-600);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.filter-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Stage filter pills */
+.stage-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.stage-pill {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .15s;
+  font-family: 'DM Mono', monospace;
+}
+.stage-pill.s1 { background: var(--teal-50); color: var(--teal-800); border-color: var(--teal-100); }
+.stage-pill.s2 { background: var(--blue-50); color: var(--blue-800); border-color: #B5D4F4; }
+.stage-pill.s3 { background: var(--purple-50); color: var(--purple-800); border-color: #CECBF6; }
+.stage-pill.inactive { background: var(--gray-50); color: var(--gray-400); border-color: var(--border); }
+
+/* Reset button */
+.reset-btn {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: 12px;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all .15s;
+  margin-top: 20px;
+}
+.reset-btn:hover { background: var(--gray-50); color: var(--ink); }
+
+/* ── CONTENT ── */
+.content {
+  padding: 32px 36px;
+  max-width: 960px;
+}
+
+/* Persona header */
+.persona-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.persona-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--teal-400);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.persona-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.persona-desc {
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.65;
+  max-width: 640px;
+}
+.persona-trigger-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 4px 10px;
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 11px;
+  color: var(--gray-600);
+}
+.persona-trigger-badge strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  flex: 1;
+  padding: 12px 14px;
+  background: var(--gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.stat-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--gray-400);
+  font-weight: 400;
+  margin-top: 1px;
+}
+
+/* Stage columns */
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.stage-col {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: opacity .2s;
+}
+.stage-col.dimmed { opacity: 0.35; }
+.stage-head {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.stage-head.s1 { background: var(--teal-50); color: var(--teal-800); }
+.stage-head.s2 { background: var(--blue-50); color: var(--blue-800); }
+.stage-head.s3 { background: var(--purple-50); color: var(--purple-800); }
+.stage-sub {
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.7;
+  display: block;
+  margin-top: 1px;
+}
+.stage-body { padding: 10px; }
+
+/* Component items */
+.comp-item {
+  display: flex;
+  gap: 7px;
+  padding: 5px 6px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ink);
+  transition: opacity .2s;
+}
+.comp-item:last-child { margin-bottom: 0; }
+.comp-item.hidden { display: none; }
+.comp-item.core { background: var(--teal-50); }
+.comp-item.optional { background: var(--gray-50); }
+.comp-item.accelerated { background: var(--purple-50); }
+.comp-item.future { background: var(--amber-50); opacity: .75; }
+.comp-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.comp-item.core .comp-dot { background: var(--teal-400); }
+.comp-item.optional .comp-dot { background: var(--gray-400); }
+.comp-item.accelerated .comp-dot { background: var(--purple-600); }
+.comp-item.future .comp-dot { background: var(--amber-400); }
+.comp-group-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  padding: 8px 6px 3px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+.comp-group-label:first-child { margin-top: 0; padding-top: 3px; }
+
+/* Thread bar */
+.thread-bar {
+  border: 1px solid #CECBF6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.thread-head {
+  background: var(--purple-50);
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.thread-head-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--purple-800);
+}
+.thread-head-sub {
+  font-size: 10px;
+  color: var(--purple-600);
+  font-family: 'DM Mono', monospace;
+}
+.thread-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.thread-cell {
+  padding: 8px 14px;
+  border-top: 1px solid #CECBF6;
+  border-right: 1px solid #CECBF6;
+  font-size: 11px;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+.thread-cell:last-child { border-right: none; }
+.thread-cell-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--purple-600);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--gray-600);
+}
+.leg-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 80px 40px;
+  color: var(--gray-400);
+}
+.empty-state-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--gray-600);
+  margin-bottom: 8px;
+}
+.empty-state-sub { font-size: 13px; }
+
+/* No-result notice */
+.no-result {
+  font-size: 11px;
+  color: var(--gray-400);
+  text-align: center;
+  padding: 12px 6px;
+  font-style: italic;
+}
+
+/* ── CATALOG TAB ── */
+.catalog-view {
+  display: none;
+}
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.cat-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cat-head {
+  padding: 9px 14px;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.cat-body { padding: 2px 0; }
+.cat-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 6px 14px;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  font-size: 11px;
+}
+.cat-row:last-child { border-bottom: none; }
+.cat-item { color: var(--ink); line-height: 1.45; }
+.cat-pills { display: flex; gap: 3px; flex-wrap: wrap; justify-content: flex-end; }
+.pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.pill.p1 { background: var(--teal-50); color: var(--teal-800); }
+.pill.p2 { background: var(--blue-50); color: var(--blue-800); }
+.pill.p3 { background: var(--purple-50); color: var(--purple-800); }
+.pill.sh { background: var(--gray-100); color: var(--gray-800); }
+.pill.re { background: var(--coral-50); color: var(--coral-800); }
+.pill.st { background: var(--amber-50); color: var(--amber-800); }
+.pill.ag { background: #FBEAF0; color: #72243E; }
+
+/* View toggle */
+.view-toggle {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.view-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all .15s;
+}
+.view-btn:hover { background: var(--gray-50); }
+.view-btn.active { background: var(--teal-50); color: var(--teal-800); border-color: var(--teal-100); }
+
+/* Scrollbar */
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 4px; }
+
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  .stages-grid { grid-template-columns: 1fr; }
+  .catalog-grid { grid-template-columns: 1fr; }
+  .thread-metrics { grid-template-columns: 1fr; }
+  .thread-cell { border-right: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">
+    <span class="header-logo">AI Control Tower</span>
+    <div class="header-divider"></div>
+    <span class="header-title">Offering Configurator</span>
+  </div>
+  <span class="header-badge">DRAFT v0.1</span>
+</header>
+
+<div class="main">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Customer persona</div>
+      <button class="persona-btn active" data-persona="shadow" onclick="selectPersona(this)">
+        <div class="persona-btn-name">Shadow AI customer</div>
+        <div class="persona-btn-trigger">IT-led, CISO-driven, or audit-triggered</div>
+      </button>
+      <button class="persona-btn" data-persona="reg" onclick="selectPersona(this)">
+        <div class="persona-btn-name">Regulator is knocking</div>
+        <div class="persona-btn-trigger">Compliance, audit exposure, EU AI Act</div>
+      </button>
+      <button class="persona-btn" data-persona="strat" onclick="selectPersona(this)">
+        <div class="persona-btn-name">Top-down AI strategy</div>
+        <div class="persona-btn-trigger">CAIO, AI CoE, board mandate, SPM in use</div>
+      </button>
+      <button class="persona-btn" data-persona="agent" onclick="selectPersona(this)">
+        <div class="persona-btn-name">Agentic-first</div>
+        <div class="persona-btn-trigger">Building agents today, MCP governance needed now</div>
+      </button>
+    </div>
+
+    <div class="sidebar-section" id="filter-section" style="display: block;">
+      <div class="sidebar-label">Component type</div>
+      <label class="filter-row">
+        <input type="checkbox" id="f-core" checked="" onchange="applyFilters()">
+        <span class="filter-label"><span class="filter-dot" style="background:#1D9E75"></span>Core — always included</span>
+      </label>
+      <label class="filter-row">
+        <input type="checkbox" id="f-optional" checked="" onchange="applyFilters()">
+        <span class="filter-label"><span class="filter-dot" style="background:#888780"></span>Optional add-on</span>
+      </label>
+      <label class="filter-row">
+        <input type="checkbox" id="f-accelerated" checked="" onchange="applyFilters()">
+        <span class="filter-label"><span class="filter-dot" style="background:#534AB7"></span>Entry-point / accelerated</span>
+      </label>
+      <label class="filter-row">
+        <input type="checkbox" id="f-future" checked="" onchange="applyFilters()">
+        <span class="filter-label"><span class="filter-dot" style="background:#BA7517"></span>Future — flag for later</span>
+      </label>
+    </div>
+
+    <div class="sidebar-section" id="stage-filter-section" style="display: block;">
+      <div class="sidebar-label">Stage focus</div>
+      <div class="stage-filters">
+        <div class="stage-pill s1" id="sf-1" onclick="toggleStage(1, this)">Stage 1</div>
+        <div class="stage-pill s2" id="sf-2" onclick="toggleStage(2, this)">Stage 2</div>
+        <div class="stage-pill s3" id="sf-3" onclick="toggleStage(3, this)">Stage 3</div>
+      </div>
+    </div>
+
+    <button class="reset-btn" onclick="resetAll()">Reset configurator</button>
+
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content" id="content-area">
+
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <div class="empty-state-title">Select a customer persona</div>
+      <div class="empty-state-sub">Choose a persona from the left to generate a configured pathway</div>
+    </div>
+
+    <div id="persona-view" style="display: block;">
+
+      <div class="view-toggle">
+        <button class="view-btn active" id="vbtn-pathway" onclick="switchView(&#39;pathway&#39;)">Pathway view</button>
+        <button class="view-btn" id="vbtn-catalog" onclick="switchView(&#39;catalog&#39;)">Component catalog</button>
+      </div>
+
+      <!-- PATHWAY VIEW -->
+      <div id="pathway-view">
+        <div class="persona-header">
+          <div class="persona-eyebrow">Configured pathway</div>
+          <div class="persona-name" id="ph-name">Shadow AI customer</div>
+          <div class="persona-desc" id="ph-desc">The organisation has discovered more AI in use than it knew about and needs to get control fast. The governing question is "what do we have and who owns it?" — compliance and strategy are secondary drivers that emerge as the inventory matures.</div>
+          <div class="persona-trigger-badge"><strong>Trigger:</strong> <span id="ph-trigger">IT-led discovery, CISO escalation, or audit finding revealing ungoverned AI</span></div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-core">18</div>
+            <div class="stat-label">Core components</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-optional">6</div>
+            <div class="stat-label">Optional add-ons</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-future">2</div>
+            <div class="stat-label">Future expansions</div>
+          </div>
+        </div>
+
+        <div class="stages-grid">
+          <div class="stage-col" id="col-s1">
+            <div class="stage-head s1">Stage 1 — See it <span class="stage-sub" id="sh-s1">First stage</span></div>
+            <div class="stage-body" id="sb-s1"><div class="comp-group-label">Platform &amp; inventory</div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AICT platform deployment &amp; configuration</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AI asset schema setup</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Discovery workshops — Now Assist, agents, third-party tools</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Ownership &amp; metadata definition</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>CMDB asset-to-service mapping</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Intake process &amp; lifecycle setup</div></div><div class="comp-group-label">Operations</div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>AI Cases — intake &amp; ownership gaps</div></div><div class="comp-item core" data-type="core" data-stage="1"><div class="comp-dot"></div><div>Value templates — adoption &amp; productivity tracking</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="1"><div class="comp-dot"></div><div>Hyperscaler discovery (AWS, Azure, GCP)</div></div><div class="comp-item optional" data-type="optional" data-stage="1"><div class="comp-dot"></div><div>CMDB health assessment</div></div></div>
+          </div>
+          <div class="stage-col" id="col-s2">
+            <div class="stage-head s2">Stage 2 — Assess it <span class="stage-sub" id="sh-s2">Second stage</span></div>
+            <div class="stage-body" id="sb-s2"><div class="comp-group-label">Risk &amp; compliance</div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>Risk assessment template configuration</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI impact assessments across inventory</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AICT native compliance monitoring</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>AI Cases — SLAs for risk findings</div></div><div class="comp-item core" data-type="core" data-stage="2"><div class="comp-dot"></div><div>Remediation backlog &amp; prioritisation</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="2"><div class="comp-dot"></div><div>IRM integration (if on platform)</div></div><div class="comp-item optional" data-type="optional" data-stage="2"><div class="comp-dot"></div><div>EU AI Act / ISO 42001 mapping</div></div><div class="comp-group-label">Future — activate in stage 3</div><div class="comp-item future" data-type="future" data-stage="2"><div class="comp-dot"></div><div>Privacy &amp; Security — access map baseline</div></div></div>
+          </div>
+          <div class="stage-col" id="col-s3">
+            <div class="stage-head s3">Stage 3 — Govern &amp; measure it <span class="stage-sub" id="sh-s3">Third stage</span></div>
+            <div class="stage-body" id="sb-s3"><div class="comp-group-label">Security &amp; governance</div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Privacy &amp; Security — access monitoring, dormant agents</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Agent Fabric — cross-platform governance</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Consistent policy enforcement</div></div><div class="comp-group-label">Value &amp; operations</div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>Value Dashboard — ROI by asset</div></div><div class="comp-item core" data-type="core" data-stage="3"><div class="comp-dot"></div><div>AI Cases — full operational cadence</div></div><div class="comp-group-label">Optional</div><div class="comp-item optional" data-type="optional" data-stage="3"><div class="comp-dot"></div><div>AI Gateway — if MCP agents present</div></div><div class="comp-item optional" data-type="optional" data-stage="3"><div class="comp-dot"></div><div>SecOps integration</div></div><div class="comp-group-label">Future expansion</div><div class="comp-item future" data-type="future" data-stage="3"><div class="comp-dot"></div><div>AI Strategy — prevent future sprawl</div></div></div>
+          </div>
+        </div>
+
+        <div class="thread-bar">
+          <div class="thread-head">
+            <span class="thread-head-title">Optimize it — always on</span>
+            <span class="thread-head-sub" id="thread-subtitle">visibility &amp; control value thread</span>
+          </div>
+          <div class="thread-metrics">
+            <div class="thread-cell">
+              <div class="thread-cell-label">Stage 1</div>
+              <span id="tm-s1">Assets registered · Ownership % · Adoption tracking</span>
+            </div>
+            <div class="thread-cell">
+              <div class="thread-cell-label">Stage 2</div>
+              <span id="tm-s2">Risk distribution · Compliance gap closure · Time-to-assess</span>
+            </div>
+            <div class="thread-cell">
+              <div class="thread-cell-label">Stage 3</div>
+              <span id="tm-s3">Agents governed · AI ROI by asset · Value Dashboard · Portfolio performance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="leg-item"><div class="leg-swatch" style="background:#1D9E75"></div>Core — included</div>
+          <div class="leg-item"><div class="leg-swatch" style="background:#888780"></div>Optional</div>
+          <div class="leg-item"><div class="leg-swatch" style="background:#534AB7"></div>Entry-point / accelerated</div>
+          <div class="leg-item"><div class="leg-swatch" style="background:#BA7517"></div>Future — flag for later</div>
+        </div>
+      </div>
+
+      <!-- CATALOG VIEW -->
+      <div id="catalog-view-area" style="display:none">
+        <div class="persona-header">
+          <div class="persona-eyebrow">Component catalog</div>
+          <div class="persona-name" id="cat-ph-name">Shadow AI customer</div>
+          <div class="persona-desc">All components relevant to this persona, with stage and persona tags. Use as a checklist for scoping conversations.</div>
+        </div>
+        <div class="catalog-grid" id="catalog-grid-content"><div class="cat-card"><div class="cat-head">Platform foundation</div><div class="cat-body"><div class="cat-row"><div class="cat-item">AICT platform deployment &amp; configuration</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI asset schema setup</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Intake process &amp; lifecycle workflow</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Ownership &amp; metadata definition</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">CMDB asset-to-service mapping</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">CMDB health assessment</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span></div></div></div></div><div class="cat-card"><div class="cat-head">Discovery</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Discovery workshops (Now Assist, agents, third-party)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Auto-discovery of Now Assist &amp; AI Agent Studio assets</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Hyperscaler discovery (AWS, Azure, GCP)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span></div></div></div></div><div class="cat-card"><div class="cat-head">Risk &amp; compliance</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Risk assessment template configuration</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AI impact assessments</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">AICT native compliance monitoring</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">IRM integration (if on platform)</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Remediation backlog &amp; prioritisation</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">AI Cases</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Configure for intake &amp; ownership gaps</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">SLAs for risk findings &amp; compliance gaps</div><div class="cat-pills"><span class="pill p2">S2</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Full operational cadence &amp; assignment groups</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">Privacy &amp; Security</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Elevated access alerts &amp; remediation</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Dormant agent detection &amp; clearance</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">SecOps integration</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">AI Gateway</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Gateway (non-agentic-first customers)</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div></div></div><div class="cat-card"><div class="cat-head">Agent governance</div><div class="cat-body"><div class="cat-row"><div class="cat-item">AI Agent Fabric — cross-platform setup</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Consistent policy enforcement across platforms</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill re">RE</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div></div></div><div class="cat-card"><div class="cat-head">Value &amp; AI Strategy</div><div class="cat-body"><div class="cat-row"><div class="cat-item">Value templates (adoption &amp; productivity)</div><div class="cat-pills"><span class="pill p1">S1</span><span class="pill sh">SH</span><span class="pill st">ST</span></div></div><div class="cat-row"><div class="cat-item">Value Dashboard — ROI by asset</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span><span class="pill st">ST</span><span class="pill ag">AG</span></div></div><div class="cat-row"><div class="cat-item">Executive AI portfolio reporting cadence</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill st">ST</span><span class="pill sh">SH</span></div></div><div class="cat-row"><div class="cat-item">AI Strategy — prevent future sprawl</div><div class="cat-pills"><span class="pill p3">S3</span><span class="pill sh">SH</span></div></div></div></div></div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border)">
+          <div class="legend">
+            <div class="leg-item"><span class="pill p1">S1</span> Stage 1</div>
+            <div class="leg-item"><span class="pill p2">S2</span> Stage 2</div>
+            <div class="leg-item"><span class="pill p3">S3</span> Stage 3</div>
+            <div class="leg-item"><span class="pill sh">SH</span> Shadow AI</div>
+            <div class="leg-item"><span class="pill re">RE</span> Regulator</div>
+            <div class="leg-item"><span class="pill st">ST</span> Strategy</div>
+            <div class="leg-item"><span class="pill ag">AG</span> Agentic-first</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script>
+const PERSONAS = {
+  shadow: {
+    name: 'Shadow AI customer',
+    desc: 'The organisation has discovered more AI in use than it knew about and needs to get control fast. The governing question is "what do we have and who owns it?" — compliance and strategy are secondary drivers that emerge as the inventory matures.',
+    trigger: 'IT-led discovery, CISO escalation, or audit finding revealing ungoverned AI',
+    stages: {
+      s1: { sub: 'First stage', groups: [
+        { label: 'Platform & inventory', items: [
+          { type: 'core', text: 'AICT platform deployment & configuration' },
+          { type: 'core', text: 'AI asset schema setup' },
+          { type: 'core', text: 'Discovery workshops — Now Assist, agents, third-party tools' },
+          { type: 'core', text: 'Ownership & metadata definition' },
+          { type: 'core', text: 'CMDB asset-to-service mapping' },
+          { type: 'core', text: 'Intake process & lifecycle setup' },
+        ]},
+        { label: 'Operations', items: [
+          { type: 'core', text: 'AI Cases — intake & ownership gaps' },
+          { type: 'core', text: 'Value templates — adoption & productivity tracking' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'Hyperscaler discovery (AWS, Azure, GCP)' },
+          { type: 'optional', text: 'CMDB health assessment' },
+        ]},
+      ]},
+      s2: { sub: 'Second stage', groups: [
+        { label: 'Risk & compliance', items: [
+          { type: 'core', text: 'Risk assessment template configuration' },
+          { type: 'core', text: 'AI impact assessments across inventory' },
+          { type: 'core', text: 'AICT native compliance monitoring' },
+          { type: 'core', text: 'AI Cases — SLAs for risk findings' },
+          { type: 'core', text: 'Remediation backlog & prioritisation' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'IRM integration (if on platform)' },
+          { type: 'optional', text: 'EU AI Act / ISO 42001 mapping' },
+        ]},
+        { label: 'Future — activate in stage 3', items: [
+          { type: 'future', text: 'Privacy & Security — access map baseline' },
+        ]},
+      ]},
+      s3: { sub: 'Third stage', groups: [
+        { label: 'Security & governance', items: [
+          { type: 'core', text: 'Privacy & Security — access monitoring, dormant agents' },
+          { type: 'core', text: 'AI Agent Fabric — cross-platform governance' },
+          { type: 'core', text: 'Consistent policy enforcement' },
+        ]},
+        { label: 'Value & operations', items: [
+          { type: 'core', text: 'Value Dashboard — ROI by asset' },
+          { type: 'core', text: 'AI Cases — full operational cadence' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'AI Gateway — if MCP agents present' },
+          { type: 'optional', text: 'SecOps integration' },
+        ]},
+        { label: 'Future expansion', items: [
+          { type: 'future', text: 'AI Strategy — prevent future sprawl' },
+        ]},
+      ]},
+    },
+    thread: {
+      subtitle: 'visibility & control value thread',
+      s1: 'Assets registered · Ownership % · Adoption tracking',
+      s2: 'Risk distribution · Compliance gap closure · Time-to-assess',
+      s3: 'Agents governed · AI ROI by asset · Value Dashboard · Portfolio performance',
+    },
+  },
+  reg: {
+    name: 'Regulator is knocking',
+    desc: 'The governing question is "can we prove our AI is compliant and low-risk?" — visibility and inventory are a means to that end. Stages 1 and 2 run concurrently. Privacy & Security and compliance artifacts are priority-one deliverables from the outset.',
+    trigger: 'Audit finding, board-level AI risk demand, EU AI Act exposure, or sector regulator inquiry',
+    stages: {
+      s1: { sub: 'First stage — concurrent with Stage 2', groups: [
+        { label: 'Platform & inventory', items: [
+          { type: 'core', text: 'AICT platform deployment & configuration' },
+          { type: 'core', text: 'AI asset schema — with compliance metadata fields' },
+          { type: 'core', text: 'Discovery workshops — risk-prioritised, high-sensitivity assets first' },
+          { type: 'core', text: 'Ownership & accountability framework' },
+          { type: 'core', text: 'CMDB asset-to-service mapping' },
+          { type: 'core', text: 'AI Cases — configured immediately for compliance findings' },
+        ]},
+        { label: 'Accelerated — activated earlier', items: [
+          { type: 'accelerated', text: 'Privacy & Security — access maps baseline from day one' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'CMDB health assessment' },
+        ]},
+      ]},
+      s2: { sub: 'Second stage — concurrent with Stage 1', groups: [
+        { label: 'Compliance', items: [
+          { type: 'core', text: 'EU AI Act risk classification across inventory' },
+          { type: 'core', text: 'ISO 42001 compliance mapping' },
+          { type: 'core', text: 'AI impact assessments — bias, transparency, human-in-loop' },
+          { type: 'core', text: 'AICT native compliance monitoring' },
+          { type: 'core', text: 'Audit-ready compliance artifact generation' },
+          { type: 'core', text: 'AI Cases — SLAs tied to regulatory deadlines' },
+          { type: 'core', text: 'Remediation backlog — risk-ranked' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'IRM integration (if on platform)' },
+          { type: 'optional', text: 'NIST AI RMF / GDPR / HIPAA mapping' },
+        ]},
+      ]},
+      s3: { sub: 'Third stage', groups: [
+        { label: 'Security & enforcement', items: [
+          { type: 'core', text: 'Privacy & Security — full access monitoring, elevated access alerts' },
+          { type: 'core', text: 'Dormant agent detection & remediation' },
+          { type: 'core', text: 'Policy enforcement across all platforms' },
+          { type: 'core', text: 'AI Agent Fabric — third-party agent governance' },
+          { type: 'core', text: 'Ongoing compliance posture dashboard' },
+          { type: 'core', text: 'AI Cases — full operational cadence' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'SecOps integration' },
+          { type: 'optional', text: 'AI Gateway — if MCP agents present' },
+        ]},
+        { label: 'Future expansion', items: [
+          { type: 'future', text: 'Value Dashboard & AI Strategy' },
+        ]},
+      ]},
+    },
+    thread: {
+      subtitle: 'compliance-weighted value thread',
+      s1: 'Assets registered · Ownership % · High-risk asset count',
+      s2: 'Risk distribution · Compliance gap closure · Time-to-remediate · Audit artifact count',
+      s3: 'Compliance posture score · Policy exception rate · Access violations resolved · Dormant agents cleared',
+    },
+  },
+  strat: {
+    name: 'Top-down AI strategy',
+    desc: 'A CAIO or AI CoE exists, or the board has issued a mandate to govern AI investment. The governing question is "are we investing in the right AI and can we prove it?" — the inventory is a downstream output of strategy, not the starting point. SPM integration is a priority.',
+    trigger: 'CAIO appointment, AI CoE formation, board AI investment mandate, or SPM already live',
+    stages: {
+      s1: { sub: 'First stage — strategy-led', groups: [
+        { label: 'Entry point — strategy first', items: [
+          { type: 'accelerated', text: 'AI Strategy — demand intake & CoE workspace setup' },
+          { type: 'accelerated', text: 'SPM integration — AI roadmap tied to business outcomes' },
+        ]},
+        { label: 'Platform & inventory', items: [
+          { type: 'core', text: 'AICT platform deployment' },
+          { type: 'core', text: 'AI asset schema — strategy-aligned metadata' },
+          { type: 'core', text: 'Inventory populated from approved demand pipeline' },
+          { type: 'core', text: 'Ownership & CoE governance roles' },
+          { type: 'core', text: 'AI Cases — intake and approval workflow' },
+          { type: 'core', text: 'Value templates — from day one, strategy-linked' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'Enterprise Architecture integration' },
+        ]},
+      ]},
+      s2: { sub: 'Second stage', groups: [
+        { label: 'Risk & value', items: [
+          { type: 'core', text: 'Risk assessment templates — strategy-weighted' },
+          { type: 'core', text: 'AI impact assessments' },
+          { type: 'core', text: 'AICT native compliance monitoring' },
+          { type: 'core', text: 'AI Cases — risk findings tracked to resolution' },
+          { type: 'core', text: 'AI Strategy — prioritise remediation by business value' },
+          { type: 'core', text: 'Value metrics now inform investment decisions' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'IRM integration' },
+          { type: 'optional', text: 'EU AI Act / ISO 42001 mapping' },
+        ]},
+      ]},
+      s3: { sub: 'Third stage', groups: [
+        { label: 'Value & portfolio', items: [
+          { type: 'core', text: 'Value Dashboard — full portfolio ROI visibility' },
+          { type: 'core', text: 'AI Strategy — portfolio performance vs. strategic goals' },
+          { type: 'core', text: 'Executive AI portfolio reporting cadence' },
+        ]},
+        { label: 'Governance', items: [
+          { type: 'core', text: 'AI Agent Fabric — third-party agent governance' },
+          { type: 'core', text: 'Privacy & Security — access monitoring' },
+          { type: 'core', text: 'Policy enforcement across all platforms' },
+          { type: 'core', text: 'AI Cases — full operational cadence' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'AI Gateway — as agentic workloads scale' },
+          { type: 'optional', text: 'SecOps integration' },
+        ]},
+      ]},
+    },
+    thread: {
+      subtitle: 'strategy-aligned value thread',
+      s1: 'Demand pipeline volume · Approved initiatives · Inventory coverage vs. demand',
+      s2: 'Risk distribution · Value metrics on assessed assets · Remediation by business impact',
+      s3: 'AI ROI by asset · Strategic alignment score · Portfolio performance · Drifting initiatives flagged',
+    },
+  },
+  agent: {
+    name: 'Agentic-first customer',
+    desc: 'Actively building AI agents in AI Agent Studio, Copilot Studio, AWS Bedrock, or similar — and has discovered they need MCP connection governance before broader AICT governance. The governing question is "how do we safely scale the agents we\'re already building?"',
+    trigger: 'Active agent development programme with MCP connections scaling beyond manual oversight',
+    stages: {
+      s1: { sub: 'First stage — gateway-led', groups: [
+        { label: 'Entry point — gateway first', items: [
+          { type: 'accelerated', text: 'AI Gateway — MCP server registry & approval workflow' },
+          { type: 'accelerated', text: 'AI Gateway — OAuth 2.1, pause controls, observability' },
+          { type: 'accelerated', text: 'Privacy & Security — PII detection on MCP traffic' },
+        ]},
+        { label: 'Platform & inventory', items: [
+          { type: 'core', text: 'AICT platform deployment' },
+          { type: 'core', text: 'AI asset schema — agent-focused' },
+          { type: 'core', text: 'Auto-discovery of Now Assist & AI Agent Studio assets' },
+          { type: 'core', text: 'Intake process — agent approval workflow' },
+          { type: 'core', text: 'Ownership & AI Steward role setup' },
+          { type: 'core', text: 'AI Cases — agent incidents & approval tracking' },
+        ]},
+      ]},
+      s2: { sub: 'Second stage', groups: [
+        { label: 'Agent governance', items: [
+          { type: 'core', text: 'AI Agent Fabric — multi-platform orchestration governance' },
+          { type: 'core', text: 'Risk assessments — agent-specific (hallucination, access, data)' },
+          { type: 'core', text: 'AI Gateway — CIMD auto-registration for additional platforms' },
+          { type: 'core', text: 'Broader AI inventory — models, datasets, prompts' },
+          { type: 'core', text: 'AICT native compliance monitoring' },
+          { type: 'core', text: 'AI Cases — risk findings, gateway alerts' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'IRM integration' },
+          { type: 'optional', text: 'SecOps integration' },
+        ]},
+      ]},
+      s3: { sub: 'Third stage', groups: [
+        { label: 'Full governance', items: [
+          { type: 'core', text: 'Privacy & Security — full access maps, dormant agent detection' },
+          { type: 'core', text: 'Policy enforcement — all platforms, all agents' },
+          { type: 'core', text: 'Value Dashboard — agent productivity & ROI' },
+          { type: 'core', text: 'AI Cases — full operational cadence' },
+          { type: 'core', text: 'Compliance posture across full agent estate' },
+        ]},
+        { label: 'Optional', items: [
+          { type: 'optional', text: 'EU AI Act / ISO 42001 mapping' },
+        ]},
+        { label: 'Future expansion', items: [
+          { type: 'future', text: 'AI Strategy — formalise demand pipeline' },
+        ]},
+      ]},
+    },
+    thread: {
+      subtitle: 'agent-performance value thread',
+      s1: 'MCP servers governed · Agent connections approved · PII blocks triggered',
+      s2: 'Agents under governance · Risk findings · Gateway latency & success rates · Platforms connected',
+      s3: 'Full agent estate governed · Policy exception rate · Agent ROI · Dormant agents cleared',
+    },
+  },
+};
+
+const CATALOG = [
+  { group: 'Platform foundation', items: [
+    { text: 'AICT platform deployment & configuration', stages: ['p1'], personas: ['sh','re','st','ag'] },
+    { text: 'AI asset schema setup', stages: ['p1'], personas: ['sh','re','st','ag'] },
+    { text: 'Intake process & lifecycle workflow', stages: ['p1'], personas: ['sh','re','st','ag'] },
+    { text: 'Ownership & metadata definition', stages: ['p1'], personas: ['sh','re','st','ag'] },
+    { text: 'CMDB asset-to-service mapping', stages: ['p1'], personas: ['sh','re','st'] },
+    { text: 'CMDB health assessment', stages: ['p1'], personas: ['sh','re'] },
+  ]},
+  { group: 'Discovery', items: [
+    { text: 'Discovery workshops (Now Assist, agents, third-party)', stages: ['p1'], personas: ['sh','re','st'] },
+    { text: 'Auto-discovery of Now Assist & AI Agent Studio assets', stages: ['p1'], personas: ['sh','ag'] },
+    { text: 'Hyperscaler discovery (AWS, Azure, GCP)', stages: ['p1'], personas: ['sh'] },
+    { text: 'Inventory from approved demand pipeline', stages: ['p1'], personas: ['st'] },
+  ]},
+  { group: 'Risk & compliance', items: [
+    { text: 'Risk assessment template configuration', stages: ['p2'], personas: ['sh','re','st','ag'] },
+    { text: 'AI impact assessments', stages: ['p2'], personas: ['sh','re','st','ag'] },
+    { text: 'AICT native compliance monitoring', stages: ['p2'], personas: ['sh','re','st','ag'] },
+    { text: 'EU AI Act risk classification', stages: ['p2'], personas: ['re'] },
+    { text: 'ISO 42001 compliance mapping', stages: ['p2'], personas: ['re'] },
+    { text: 'NIST AI RMF / GDPR / HIPAA mapping', stages: ['p2'], personas: ['re'] },
+    { text: 'Audit-ready compliance artifact generation', stages: ['p2'], personas: ['re'] },
+    { text: 'IRM integration (if on platform)', stages: ['p2'], personas: ['sh','re','st','ag'] },
+    { text: 'Remediation backlog & prioritisation', stages: ['p2'], personas: ['sh','re','st','ag'] },
+  ]},
+  { group: 'AI Cases', items: [
+    { text: 'Configure for intake & ownership gaps', stages: ['p1'], personas: ['sh','re','st','ag'] },
+    { text: 'SLAs for risk findings & compliance gaps', stages: ['p2'], personas: ['sh','re','st','ag'] },
+    { text: 'SLAs tied to regulatory deadlines', stages: ['p2'], personas: ['re'] },
+    { text: 'Full operational cadence & assignment groups', stages: ['p3'], personas: ['sh','re','st','ag'] },
+    { text: 'Agent incidents & gateway alert tracking', stages: ['p1','p2'], personas: ['ag'] },
+  ]},
+  { group: 'Privacy & Security', items: [
+    { text: 'Access map baseline — what agents can reach', stages: ['p1'], personas: ['re','ag'] },
+    { text: 'Elevated access alerts & remediation', stages: ['p3'], personas: ['sh','re','st','ag'] },
+    { text: 'Dormant agent detection & clearance', stages: ['p3'], personas: ['sh','re','st','ag'] },
+    { text: 'PII detection on MCP traffic (via AI Gateway)', stages: ['p1','p3'], personas: ['ag','re'] },
+    { text: 'SecOps integration', stages: ['p3'], personas: ['sh','re','ag'] },
+  ]},
+  { group: 'AI Gateway', items: [
+    { text: 'MCP server registry & lifecycle', stages: ['p1'], personas: ['ag'] },
+    { text: 'Approval workflow (Asset Approval Playbook)', stages: ['p1'], personas: ['ag'] },
+    { text: 'OAuth 2.1 enforcement & pause controls', stages: ['p1'], personas: ['ag'] },
+    { text: 'CIMD auto-registration (10+ platforms)', stages: ['p2'], personas: ['ag'] },
+    { text: 'Usage, latency & success observability', stages: ['p1','p2'], personas: ['ag'] },
+    { text: 'MCP community catalog import', stages: ['p2'], personas: ['ag'] },
+    { text: 'Gateway (non-agentic-first customers)', stages: ['p3'], personas: ['sh','re','st'] },
+  ]},
+  { group: 'Agent governance', items: [
+    { text: 'AI Agent Fabric — cross-platform setup', stages: ['p3'], personas: ['sh','re','st'] },
+    { text: 'AI Agent Fabric — multi-platform orchestration', stages: ['p2'], personas: ['ag'] },
+    { text: 'Consistent policy enforcement across platforms', stages: ['p3'], personas: ['sh','re','st','ag'] },
+    { text: 'AI Steward role configuration', stages: ['p1'], personas: ['ag'] },
+  ]},
+  { group: 'Value & AI Strategy', items: [
+    { text: 'Value templates (adoption & productivity)', stages: ['p1'], personas: ['sh','st'] },
+    { text: 'Value Dashboard — ROI by asset', stages: ['p3'], personas: ['sh','st','ag'] },
+    { text: 'AI Strategy — demand intake & CoE workspace', stages: ['p1'], personas: ['st'] },
+    { text: 'SPM integration — AI roadmap', stages: ['p1'], personas: ['st'] },
+    { text: 'Enterprise Architecture integration', stages: ['p1'], personas: ['st'] },
+    { text: 'Portfolio performance vs. strategic goals', stages: ['p3'], personas: ['st'] },
+    { text: 'Executive AI portfolio reporting cadence', stages: ['p3'], personas: ['st','sh'] },
+    { text: 'AI Strategy — prevent future sprawl', stages: ['p3'], personas: ['sh'] },
+  ]},
+];
+
+let currentPersona = null;
+let activeStages = { 1: true, 2: true, 3: true };
+let currentView = 'pathway';
+
+function selectPersona(btn) {
+  document.querySelectorAll('.persona-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentPersona = btn.dataset.persona;
+  document.getElementById('filter-section').style.display = 'block';
+  document.getElementById('stage-filter-section').style.display = 'block';
+  document.getElementById('empty-state').style.display = 'none';
+  document.getElementById('persona-view').style.display = 'block';
+  renderPersona();
+  renderCatalog();
+}
+
+function renderPersona() {
+  const p = PERSONAS[currentPersona];
+  document.getElementById('ph-name').textContent = p.name;
+  document.getElementById('ph-desc').textContent = p.desc;
+  document.getElementById('ph-trigger').textContent = p.trigger;
+  document.getElementById('cat-ph-name').textContent = p.name;
+  document.getElementById('thread-subtitle').textContent = p.thread.subtitle;
+  document.getElementById('tm-s1').textContent = p.thread.s1;
+  document.getElementById('tm-s2').textContent = p.thread.s2;
+  document.getElementById('tm-s3').textContent = p.thread.s3;
+
+  const stageKeys = ['s1','s2','s3'];
+  const stageNums = [1,2,3];
+  let totalCore = 0, totalOptional = 0, totalFuture = 0;
+
+  stageKeys.forEach((sk, i) => {
+    const sn = stageNums[i];
+    const stage = p.stages[sk];
+    document.getElementById('sh-' + sk).textContent = stage.sub;
+    const body = document.getElementById('sb-' + sk);
+    body.innerHTML = '';
+    stage.groups.forEach(g => {
+      const lbl = document.createElement('div');
+      lbl.className = 'comp-group-label';
+      lbl.textContent = g.label;
+      body.appendChild(lbl);
+      g.items.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'comp-item ' + item.type;
+        el.dataset.type = item.type;
+        el.dataset.stage = sn;
+        el.innerHTML = '<div class="comp-dot"></div><div>' + item.text + '</div>';
+        body.appendChild(el);
+        if (item.type === 'core' || item.type === 'accelerated') totalCore++;
+        else if (item.type === 'optional') totalOptional++;
+        else if (item.type === 'future') totalFuture++;
+      });
+    });
+  });
+
+  document.getElementById('stat-core').textContent = totalCore;
+  document.getElementById('stat-optional').textContent = totalOptional;
+  document.getElementById('stat-future').textContent = totalFuture;
+  applyFilters();
+}
+
+function renderCatalog() {
+  if (!currentPersona) return;
+  const personaTag = currentPersona === 'shadow' ? 'sh' : currentPersona === 'reg' ? 're' : currentPersona === 'strat' ? 'st' : 'ag';
+  const grid = document.getElementById('catalog-grid-content');
+  grid.innerHTML = '';
+
+  CATALOG.forEach(group => {
+    const relevant = group.items.filter(i => i.personas.includes(personaTag));
+    if (!relevant.length) return;
+    const card = document.createElement('div');
+    card.className = 'cat-card';
+    card.innerHTML = '<div class="cat-head">' + group.group + '</div><div class="cat-body"></div>';
+    const body = card.querySelector('.cat-body');
+    relevant.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'cat-row';
+      const stageMap = { p1: 'p1', p2: 'p2', p3: 'p3' };
+      const personaMap = { sh: 'sh', re: 're', st: 'st', ag: 'ag' };
+      const stagePills = item.stages.map(s => '<span class="pill ' + s + '">' + s.replace('p','S') + '</span>').join('');
+      const personaPills = item.personas.map(p => '<span class="pill ' + p + '">' + p.toUpperCase() + '</span>').join('');
+      row.innerHTML = '<div class="cat-item">' + item.text + '</div><div class="cat-pills">' + stagePills + personaPills + '</div>';
+      body.appendChild(row);
+    });
+    grid.appendChild(card);
+  });
+}
+
+function applyFilters() {
+  const showCore = document.getElementById('f-core').checked;
+  const showOpt = document.getElementById('f-optional').checked;
+  const showAcc = document.getElementById('f-accelerated').checked;
+  const showFuture = document.getElementById('f-future').checked;
+
+  document.querySelectorAll('.comp-item').forEach(el => {
+    const type = el.dataset.type;
+    const stage = parseInt(el.dataset.stage);
+    const typeOk = (type === 'core' && showCore) || (type === 'optional' && showOpt) || (type === 'accelerated' && showAcc) || (type === 'future' && showFuture);
+    const stageOk = activeStages[stage];
+    el.classList.toggle('hidden', !(typeOk && stageOk));
+  });
+
+  [1,2,3].forEach(n => {
+    const col = document.getElementById('col-s' + n);
+    if (col) col.classList.toggle('dimmed', !activeStages[n]);
+  });
+}
+
+function toggleStage(n, el) {
+  activeStages[n] = !activeStages[n];
+  el.classList.toggle('inactive', !activeStages[n]);
+  applyFilters();
+}
+
+function switchView(view) {
+  currentView = view;
+  document.getElementById('vbtn-pathway').classList.toggle('active', view === 'pathway');
+  document.getElementById('vbtn-catalog').classList.toggle('active', view === 'catalog');
+  document.getElementById('pathway-view').style.display = view === 'pathway' ? 'block' : 'none';
+  document.getElementById('catalog-view-area').style.display = view === 'catalog' ? 'block' : 'none';
+}
+
+function resetAll() {
+  currentPersona = null;
+  activeStages = { 1: true, 2: true, 3: true };
+  document.querySelectorAll('.persona-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('filter-section').style.display = 'none';
+  document.getElementById('stage-filter-section').style.display = 'none';
+  document.getElementById('empty-state').style.display = 'block';
+  document.getElementById('persona-view').style.display = 'none';
+  document.getElementById('f-core').checked = true;
+  document.getElementById('f-optional').checked = true;
+  document.getElementById('f-accelerated').checked = true;
+  document.getElementById('f-future').checked = true;
+  ['sf-1','sf-2','sf-3'].forEach(id => document.getElementById(id).classList.remove('inactive'));
+  switchView('pathway');
+}
+</script>
+
+
+
+</body></html>
